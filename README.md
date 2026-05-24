@@ -1,7 +1,7 @@
 # Tip Calculator
 
-![Swift](https://img.shields.io/badge/Swift-3.0-F05138?logo=swift&logoColor=white)
-![iOS 9+](https://img.shields.io/badge/iOS-9%2B-000000?logo=apple&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-6.0-F05138?logo=swift&logoColor=white)
+![iOS 16+](https://img.shields.io/badge/iOS-16%2B-000000?logo=apple&logoColor=white)
 ![UIKit](https://img.shields.io/badge/UIKit-Auto%20Layout-blue)
 
 ![Demo](docs/assets/demo2.gif)
@@ -21,7 +21,7 @@
 
 | Layer | Technology |
 |---|---|
-| Language | Swift 3.0 |
+| Language | Swift 6.0 |
 | UI | UIKit, UITextField, UISegmentedControl, UILabel |
 | Layout | Auto Layout, Interface Builder |
 | Persistence | UserDefaults |
@@ -46,4 +46,4 @@ git clone https://github.com/gerardrecinto/tip-calculator-ios.git
 open tip-calculator-ios/tip_calc.xcodeproj
 ```
 
-Build and run on the iOS Simulator (Xcode 8+). No dependencies or API keys required.
+Build and run on the iOS Simulator (Xcode 16+). No dependencies or API keys required.

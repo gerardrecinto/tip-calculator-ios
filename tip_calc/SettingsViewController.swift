@@ -8,43 +8,22 @@
 
 import UIKit
 
-
+@MainActor
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tippyCtrl: UISegmentedControl!
-    
+
+    private let defaults = UserDefaults.standard
+    private let tipPercentages = [0.18, 0.20, 0.25]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = UIColor.lightGray
-        
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.secondarySystemBackground
+        tippyCtrl.selectedSegmentIndex = defaults.integer(forKey: "index")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func save(_ sender: AnyObject) {
-        
-        //Access UserDefaults
-        let defaults = UserDefaults.standard
-        let tipPercentages = [0.18, 0.20, 0.25]
+    @IBAction func save(_ sender: Any) {
         defaults.set(tippyCtrl.selectedSegmentIndex, forKey: "index")
-        defaults.set( tipPercentages[tippyCtrl.selectedSegmentIndex], forKey: "percent")
-        // Force UserDefaults to save.
-        defaults.synchronize()
+        defaults.set(tipPercentages[tippyCtrl.selectedSegmentIndex], forKey: "percent")
     }
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
